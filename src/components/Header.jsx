@@ -77,7 +77,7 @@ const Header = () => {
 
       <div className="text-white flex gap-2 items-center">
         <Phone />
-        <a href="tel:+12195550114">(219) 555-0114</a>
+        <a href="tel:+998976006787">(97) 600-6787</a>
       </div>
     </div>
   );
