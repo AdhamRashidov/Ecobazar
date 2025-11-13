@@ -6,6 +6,9 @@ import { CustomerIcon } from "../../assets/icons/customerIcon.jsx";
 import { PaymentIcon } from "../../assets/icons/paymentIcon.jsx";
 import { MoneyBackIcon } from "../../assets/icons/moneyBackIcon.jsx";
 import { RightArrow } from "../../assets/icons/rightArrow.jsx";
+import vegetables from "../../assets/images/vegetables.png";
+import meat from "../../assets/images/meat.png";
+import fruit from "../../assets/images/fruit.png";
 
 import { PopularCategories } from "./components/popularCategories";
 import { PopularProducts } from "./components/popularProducts";
@@ -92,11 +95,35 @@ const Home = () => {
 
             <PopularCategories />
 
+            <div className="flex justify-between items-center mt-[50px]">
+              <h1 className="text-[32px] font-semibold text-gray-900 leading-[1.2]">
+                Popular Categories
+              </h1>
+              <button className="flex items-center gap-3 text-[#00b207] text-[16px] font-medium">
+                <h1>View All</h1>
+                <RightArrow />
+              </button>
+            </div>
+
             <PopularProducts />
           </div>
         </section>
         {/* Popular Categoryies Product end */}
       </div>
+
+      <section className="container pt-[60px]">
+        <div className="flex gap-6">
+          <div>
+            <img src={vegetables} alt="vegetables" />
+          </div>
+          <div>
+            <img src={meat} alt="meat" />
+          </div>
+          <div>
+            <img src={fruit} alt="fruit" />
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
