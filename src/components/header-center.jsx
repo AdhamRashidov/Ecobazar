@@ -4,10 +4,19 @@ import search from "../assets/icons/search.svg";
 import heart from "../assets/icons/heart.svg";
 import { Bag } from "../assets/icons/bag";
 import Phone from "../assets/icons/phone";
+import { useSearch } from "../components/search-provider";
+import { useNavigate } from "react-router-dom";
 
 export const HeaderCenter = () => {
+  const { searchTerm, setSearchTerm } = useSearch();
+  const navigate = useNavigate();
+
   const handleLogoClick = () => {
     navigate("/");
+  };
+
+  const handleSearch = (e) => {
+    e.preventDefault();
   };
 
   return (
@@ -17,7 +26,7 @@ export const HeaderCenter = () => {
       </div>
 
       <div className="border border-gray-300 rounded-[5px]">
-        <form className="flex items-center">
+        <form onSubmit={handleSearch} className="flex items-center ">
           <div className="flex relative">
             <img
               className="absolute top-[50%] -translate-y-1/2 left-3"
@@ -28,6 +37,8 @@ export const HeaderCenter = () => {
               className="w-[430px] h-11 outline-none px-[45px]"
               type="text"
               placeholder="Search"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
           <div>
@@ -45,7 +56,7 @@ export const HeaderCenter = () => {
         <img src={heart} alt="heart" />
         <span className="text-gray-300">|</span>
         <div className="relative ">
-			<Bag/>
+          <Bag />
           <span
             className="absolute w-[18px] h-[18px] bg-green-700 rounded-full
 					   text-white flex  justify-center items-center text-[13px]
